@@ -31,9 +31,11 @@ function CarouselAdd() {
   // FETCH
   const fetchGallery = async () => {
   try {
-    const res = await API.get("https://land-8m43.onrender.com/Carousel/GetCarousel");
+    const res = await API.get("/Carousel/GetCarousel");
 
-    console.log(res.data);
+    
+    console.log("API RESPONSE:", res);
+    console.log("Carousel Data:", res.data);
 
     setGallery(Array.isArray(res.data.msg) ? res.data.msg : []);
   } catch (err) {

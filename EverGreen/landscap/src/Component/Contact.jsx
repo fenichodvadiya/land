@@ -133,7 +133,7 @@ ${formData.message}`;
             backgroundPosition: "center",
             display: "flex",
             alignItems: "center",
-            mt: 12,
+            mt: 5,
             color: "#fff",
             alignItems: "center",
             justifyContent: "center",

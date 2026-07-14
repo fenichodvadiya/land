@@ -114,7 +114,7 @@ function CarouselGal() {
           <Box key={index}>
             <Box
               component="img"
-              src={` https://land-8m43.onrender.com/${item.image}`}
+              src={`https://land-8m43.onrender.com/uploads/${item.image}`}
               alt="carousel"
               sx={{
                 width: "100%",
