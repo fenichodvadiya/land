@@ -83,17 +83,13 @@ export default function Dashboard(props) {
   const demoWindow = window ? window() : undefined;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+const admins = JSON.parse(localStorage.getItem("admin"));
+const token = localStorage.getItem("adminToken");
 
-  // const admin = JSON.parse(localStorage.getItem("admin"));
-
-  // const token = localStorage.getItem("adminToken");
-
-  // if (!admin || !token) {
-  //   return <Navigate to="/adminlogin" replace />;
-  // }
-  //   const handleMenuOpen = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
+if (!admins || !token) {
+  return <Navigate to="/adminlogin" replace />;
+}
+  
   const admin = {
   name: "EvergreenOwner",
   email: "admin@gmail.com",
