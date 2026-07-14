@@ -32,7 +32,7 @@ function Counter() {
           {/* COUNTER 1 */}
           <Grid item xs={12} md={6}>
             <Typography variant="h3" fontWeight="bold">
-              <CountUp start={0} end={500} duration={3} />
+              <CountUp start={0} end={200} duration={3} />
               +
             </Typography>
 
@@ -44,7 +44,7 @@ function Counter() {
           {/* COUNTER 2 */}
           <Grid item xs={12} md={6}>
             <Typography variant="h3" fontWeight="bold">
-              <CountUp start={0} end={500} duration={3} />
+              <CountUp start={0} end={200} duration={3} />
               +
             </Typography>
 
