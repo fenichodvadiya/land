@@ -1,0 +1,7 @@
+.footer{
+    background-color: brown;
+}
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden;
+}
