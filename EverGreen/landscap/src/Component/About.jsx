@@ -9,7 +9,6 @@ import {
   CardContent,
   Button,
 } from "@mui/material";
-
 import { motion } from "framer-motion";
 import Navbar from "./NavBar";
 import ParkIcon from "@mui/icons-material/Park";

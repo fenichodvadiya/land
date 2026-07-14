@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import API from "../Api/Axious";
 export default function ResetPassword() {
   const { token } = useParams();
   const navigate = useNavigate();
@@ -26,8 +26,8 @@ export default function ResetPassword() {
 
   const handleReset = async () => {
     try {
-      const res = await axios.post(
-        `http://localhost:8000/admin/resetpassword/${token}`,
+      const res = await API.post(
+        `https://land-8m43.onrender.com/admin/resetpassword/${token}`,
         {
           password,
         }

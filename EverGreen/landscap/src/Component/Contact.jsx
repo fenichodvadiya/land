@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import garden6 from "../pic/garden6.jpeg";
 import garden7 from "../pic/garden7.jpeg";
+import API from "../Api/Axious";
 import {
   Dialog,
   DialogTitle,
@@ -88,8 +89,8 @@ function Contact() {
     }
 
     try {
-      await axios.post(
-        "http://localhost:8000/contact/addcontact",
+      await API.post(
+        "https://land-8m43.onrender.com/contact/addcontact",
         formData
       );
 

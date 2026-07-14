@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../Api/Axious";
 import Box from "@mui/material/Box";
 import { Card, CardMedia, Typography, Container, Button } from "@mui/material";
 
@@ -18,8 +18,8 @@ function Gallary() {
     useEffect(() => {
         const fetchGallery = async () => {
             try {
-                const res = await axios.get(
-                    "http://localhost:8000/EverGallery/getGallery"
+                const res = await API.get(
+                    "https://land-8m43.onrender.com/EverGallery/getGallery"
                 );
                 setGallery(res.data.msg || []);
             } catch (err) {
@@ -154,7 +154,7 @@ function Gallary() {
                                 >
                                     <CardMedia
                                         component="img"
-                                        src={`http://localhost:8000/uploads/${item.image}`}
+                                        src={`https://land-8m43.onrender.com/uploads/${item.image}`}
                                         alt={item.name}
                                         sx={{
                                             width: "100%",

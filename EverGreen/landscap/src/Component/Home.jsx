@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API from "../Api/Axious";
 import Counter from "./Counter";
 import {
     Box,
@@ -26,8 +27,8 @@ function Home() {
     useEffect(() => {
         const fetchAdvertisement = async () => {
             try {
-                const res = await axios.get(
-                    "http://localhost:8000/Advertisement/GetAdver"
+                const res = await API.get(
+                    "https://land-8m43.onrender.com/Advertisement/GetAdver"
                 );
 
                 setAdvertisement(res.data.msg || []);
@@ -188,7 +189,7 @@ function Home() {
 
                                         component="img"
 
-                                        src={`http://localhost:8000/uploads/${item.image}`}
+                                        src={` https://land-8m43.onrender.com/uploads/${item.image}`}
 
                                         alt="advertisement"
 

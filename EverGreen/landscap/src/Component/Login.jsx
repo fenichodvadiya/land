@@ -10,15 +10,15 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-
+import API from "../Api/Axious";
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(
-        "http://localhost:8000/User/Login",
+      const res = await API.post(
+        "https://land-8m43.onrender.com/User/Login",
         {
           email,
           password,

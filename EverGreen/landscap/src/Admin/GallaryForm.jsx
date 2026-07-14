@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../Api/Axious";
 import {
   Box,
   TextField,
@@ -38,7 +38,7 @@ export default function Form() {
   // FETCH
  const fetchGallery = async () => {
    try {
-     const res = await axios.get("http://localhost:8000/EverGallery/GetGallery");
+     const res = await API.get("https://land-8m43.onrender.com/EverGallery/GetGallery");
  
      console.log(res.data);
  
@@ -62,15 +62,15 @@ export default function Form() {
     try {
       if (editId) {
         // UPDATE
-        await axios.put(
-          `http://localhost:8000/EverGallery/UpdateGallery/${editId}`,
+        await API.put(
+          `https://land-8m43.onrender.com/EverGallery/UpdateGallery/${editId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
         // CREATE
-        await axios.post(
-          "http://localhost:8000/EverGallery/Gallery",
+        await API.post(
+          "https://land-8m43.onrender.com/EverGallery/Gallery",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -95,8 +95,8 @@ export default function Form() {
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `http://localhost:8000/EverGallery/DeleteGallery/${id}`
+      await API.delete(
+        `https://land-8m43.onrender.com/EverGallery/DeleteGallery/${id}`
       );
       fetchGallery();
     } catch (err) {
@@ -190,7 +190,7 @@ export default function Form() {
 
                 <TableCell>
                   <img
-                    src={`http://localhost:8000/uploads/${item.image}`}
+                    src={` https://land-8m43.onrender.com/uploads/${item.image}`}
                     width="60"
                     height="60"
                     style={{ objectFit: "cover" }}

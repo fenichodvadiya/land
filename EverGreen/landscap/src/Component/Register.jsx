@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
+import API from "../Api/Axious";
 import {
   Box,
   Container,
@@ -26,8 +27,8 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post(
-        "http://localhost:8000/User/Register",
+      const res = await API.post(
+        "https://land-8m43.onrender.com/User/Register",
         {
           name,
           email,

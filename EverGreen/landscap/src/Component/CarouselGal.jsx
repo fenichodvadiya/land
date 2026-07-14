@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../Api/Axious";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -16,8 +16,8 @@ function CarouselGal() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:8000/Carousel/GetCarousel"
+        const res = await API.get(
+          "https://land-8m43.onrender.com/Carousel/GetCarousel"
         );
         setCarousel(res.data.msg || []);
       } catch (err) {
@@ -114,7 +114,7 @@ function CarouselGal() {
           <Box key={index}>
             <Box
               component="img"
-              src={`http://localhost:8000/uploads/${item.image}`}
+              src={` https://land-8m43.onrender.com/${item.image}`}
               alt="carousel"
               sx={{
                 width: "100%",

@@ -5,7 +5,7 @@ import {
   Table, TableBody, TableCell, TableContainer, TableHead,
   TableRow, Paper
 } from "@mui/material";
-
+import API from "../Api/Axious";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -31,7 +31,7 @@ function CarouselAdd() {
   // FETCH
   const fetchGallery = async () => {
   try {
-    const res = await axios.get("http://localhost:8000/Carousel/GetCarousel");
+    const res = await API.get("https://land-8m43.onrender.com/Carousel/GetCarousel");
 
     console.log(res.data);
 
@@ -55,15 +55,15 @@ function CarouselAdd() {
     try {
       if (editId) {
         // UPDATE
-        await axios.put(
-          `http://localhost:8000/Carousel/UpdateCarousel/${editId}`,
+        await API.put(
+          `https://land-8m43.onrender.com/Carousel/UpdateCarousel/${editId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
         // CREATE
-        await axios.post(
-          "http://localhost:8000/Carousel/CreateCarousel",
+        await API.post(
+          "https://land-8m43.onrender.com/Carousel/CreateCarousel",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -89,7 +89,7 @@ function CarouselAdd() {
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/Carousel/DeleteCarousel/${id}`);
+      await API.delete(`https://land-8m43.onrender.com/Carousel/DeleteCarousel/${id}`);
       fetchGallery();
     } catch (err) {
       console.log(err);
@@ -173,7 +173,7 @@ function CarouselAdd() {
 
                 <TableCell>
                   <img
-                    src={`http://localhost:8000/uploads/${item.image}`}
+                    src={` https://land-8m43.onrender.com/uploads/${item.image}`}
                     width="60"
                     height="60"
                     style={{ objectFit: "cover" }}

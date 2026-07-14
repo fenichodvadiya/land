@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import API from "../Api/Axious"
 import {
   Box,
   Paper,
@@ -83,9 +83,9 @@ try{
 setLoading(true);
 
 
-const res=await axios.post(
+const res=await API.post(
 
-"http://localhost:8000/admin/login",
+"https://land-8m43.onrender.com/admin/login",
 
 formData
 
@@ -593,9 +593,9 @@ onClick={async()=>{
 try{
 
 
-await axios.post(
+await API.post(
 
-"http://localhost:8000/admin/forgotpassword",
+"https://land-8m43.onrender.com/admin/forgotpassword",
 
 {
 

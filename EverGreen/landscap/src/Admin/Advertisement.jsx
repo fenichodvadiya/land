@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../Api/Axious";
 import {
   Box,
   TextField,
@@ -39,7 +39,7 @@ export default function Advertisement() {
   // FETCH
   const fetchGallery = async () => {
   try {
-    const res = await axios.get("http://localhost:8000/Advertisement/GetAdver");
+    const res = await API.get("https://land-8m43.onrender.com/Advertisement/GetAdver");
 
     console.log(res.data);
 
@@ -63,8 +63,8 @@ useEffect(() => {
     try {
       if (editId) {
         // UPDATE
-        await axios.put(
-          `http://localhost:8000/Advertisement/UpdateAdver/${editId}`,
+        await API.put(
+          `https://land-8m43.onrender.com/Advertisement/UpdateAdver/${editId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -73,8 +73,8 @@ useEffect(() => {
         console.log(data);
 console.log(formData.get("name"));
 console.log(formData.get("image"));
-        await axios.post(
-          "http://localhost:8000/Advertisement/CreateAdver",
+        await API.post(
+          "https://land-8m43.onrender.com/Advertisement/CreateAdver",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -100,8 +100,8 @@ console.log(formData.get("image"));
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `http://localhost:8000/Advertisement/DeleteAdver/${id}`
+      await API.delete(
+        `https://land-8m43.onrender.com/Advertisement/DeleteAdver/${id}`
       );
       fetchGallery();
     } catch (err) {
@@ -189,7 +189,7 @@ console.log(formData.get("image"));
 
                 <TableCell>
                   <img
-                    src={`http://localhost:8000/uploads/${item.image}`}
+                    src={`https://land-8m43.onrender.com/uploads/${item.image}`}
                     width="60"
                     height="60"
                     style={{ objectFit: "cover" }}
