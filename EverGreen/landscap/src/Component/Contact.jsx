@@ -194,7 +194,7 @@ ${formData.message}`;
                     cursor: "pointer",
                     height: 200,
                     width: {
-                      xs: 150,
+                      xs: 160,
                       sm: 250,
                       md: 300,
                     },
@@ -256,7 +256,7 @@ ${formData.message}`;
                   alt=""
                   sx={{
                     width: {
-                      xs: 300,
+                      xs: 400,
                       sm: 400,
                       md: "100%",
                     },

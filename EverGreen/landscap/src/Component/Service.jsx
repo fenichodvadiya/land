@@ -145,9 +145,9 @@ export default function LandscapeServices() {
   <Container>
    <Grid container spacing={3}>
   {[
-    ["1200+", "Projects Completed"],
-    ["1200+", "Happy Clients"],
-    ["15+", "Years Experience"],
+    ["500+", "Projects Completed"],
+    ["500+", "Happy Clients"],
+    ["10+", "Years Experience"],
     ["24/7", "Support"],
   ].map((item, index) => (
     <Grid

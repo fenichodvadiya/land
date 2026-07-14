@@ -130,7 +130,7 @@ function Home() {
                     color="#2e7d32"
                     sx={{ margin: 5 }}
                 >
-                    SPECIAL OFFERS
+                    OUR WORK
                 </Typography>
 
 
@@ -230,7 +230,7 @@ function Home() {
 
                                         >
 
-                                            {item.title || "Evergreen Offer"}
+                                            {item.title || "Evergreen Work"}
 
                                         </Typography>
 
