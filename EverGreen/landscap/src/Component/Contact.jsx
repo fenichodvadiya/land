@@ -52,7 +52,7 @@ function Contact() {
     {
       icon: <PhoneIcon sx={{ fontSize: 40 }} />,
       title: "Call Us",
-      value: "+91 93167 41009",
+      value: "+91 99090 44747",
       action: () => {
         window.location.href = "tel:+919316741009";
       },
@@ -60,7 +60,7 @@ function Contact() {
     {
       icon: <EmailIcon sx={{ fontSize: 40 }} />,
       title: "Email Us",
-      value: "chodvadiyafenny@gmail.com",
+      value: "evergreenlandscapeservices99@gmail.com",
       action: () => {
         window.open(
           "https://mail.google.com/mail/?view=cm&fs=1&to=chodvadiyafenny@gmail.com&su=Landscape Inquiry",
@@ -403,7 +403,7 @@ ${formData.message}`;
           variant="contained"
           onClick={() =>
             window.open(
-              "https://wa.me/919316741009?text=Hello%20Evergreen,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20my%20landscape%20project.",
+              "https://wa.me/9909044747?text=Hello%20Evergreen,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20my%20landscape%20project.",
               "_blank"
             )
           }
