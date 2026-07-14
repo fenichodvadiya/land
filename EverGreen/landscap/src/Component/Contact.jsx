@@ -256,7 +256,7 @@ ${formData.message}`;
                   alt=""
                   sx={{
                     width: {
-                      xs: 400,
+                      xs: "100%",
                       sm: 400,
                       md: "100%",
                     },
