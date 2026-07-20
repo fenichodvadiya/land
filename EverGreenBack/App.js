@@ -24,6 +24,18 @@ console.log("JWT =>", process.env.JWT_SECRET);
 app.get('/',(req,res)=>{
     res.send("server start")
 })
+const fs = require("fs");
+
+app.get("/check-uploads", (req, res) => {
+  const uploadPath = path.join(__dirname, "uploads");
+
+  res.json({
+    exists: fs.existsSync(uploadPath),
+    files: fs.existsSync(uploadPath)
+      ? fs.readdirSync(uploadPath)
+      : [],
+  });
+});
 app.listen(process.env.PORT,()=>{
     console.log("port started on",process.env.PORT)
 })
