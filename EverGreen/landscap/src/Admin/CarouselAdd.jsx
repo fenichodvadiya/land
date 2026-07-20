@@ -57,16 +57,16 @@ function CarouselAdd() {
     try {
       if (editId) {
         // UPDATE
-        await API.put(
-          `https://land-8m43.onrender.com/Carousel/UpdateCarousel/${editId}`,
-          formData,
+        awaitAPI.put(
+  `/Carousel/UpdateCarousel/${editId}`,
+  formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
         // CREATE
-        await API.post(
-          "https://land-8m43.onrender.com/Carousel/CreateCarousel",
-          formData,
+        await  API.post(
+  "/Carousel/CreateCarousel",
+  formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       }

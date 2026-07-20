@@ -3,8 +3,10 @@ const Carousel = require("../Schema/CarouselModel");
 
 // CREATE CAROUSEL
 const CreateCarousel = async (req, res) => {
-  try {
+  console.log("BODY:", req.body);
+  console.log("FILE:", req.file);
 
+  try {
     const imageName = req.file ? req.file.filename : null;
 
     const carousel = new Carousel({
@@ -17,16 +19,14 @@ const CreateCarousel = async (req, res) => {
     res.send({
       isSuccess: true,
       msg: "Photo added successfully",
-      data
+      data,
     });
-
   } catch (err) {
-
+    console.log(err);
     res.status(500).send({
       isSuccess: false,
-      msg: err.message
+      msg: err.message,
     });
-
   }
 };
 

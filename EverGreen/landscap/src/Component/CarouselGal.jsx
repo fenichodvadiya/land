@@ -16,9 +16,7 @@ function CarouselGal() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await API.get(
-          "https://land-8m43.onrender.com/Carousel/GetCarousel"
-        );
+        const res = await API.get("/Carousel/GetCarousel");
         setCarousel(res.data.msg || []);
       } catch (err) {
         setCarousel([]);
