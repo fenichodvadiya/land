@@ -48,38 +48,37 @@ function CarouselAdd() {
     fetchGallery();
   }, []);
 
-  // CREATE / UPDATE
-  const saveCarousel = async () => {
-    const formData = new FormData();
-    formData.append("name", data.name);
-    if (data.image) formData.append("image", data.image);
+ const saveCarousel = async () => {
+  const formData = new FormData();
 
-    try {
-      if (editId) {
-        // UPDATE
-        awaitAPI.put(
-  `/Carousel/UpdateCarousel/${editId}`,
-  formData,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-      } else {
-        // CREATE
-        await  API.post(
-  "/Carousel/CreateCarousel",
-  formData,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-      }
+  formData.append("name", data.name);
 
-      setOpen(false);
-      setData({ name: "", image: null });
-      setEditId(null);
-      fetchGallery();
+  if (data.image) {
+    formData.append("image", data.image);
+  }
 
-    } catch (err) {
-      console.log(err);
+  try {
+    if (editId) {
+      await API.put(`/Carousel/UpdateCarousel/${editId}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    } else {
+      await API.post("/Carousel/CreateCarousel", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
     }
-  };
+
+    fetchGallery();
+    setOpen(false);
+
+  } catch (err) {
+    console.log(err.response?.data || err);
+  }
+};
 
   // EDIT OPEN
   const handleEdit = (item) => {
