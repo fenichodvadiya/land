@@ -13,17 +13,22 @@ import NavBar from "./NavBar";
 function CarouselGal() {
   const [carousel, setCarousel] = useState([]);
 
-  useEffect(() => {
-    const fetchGallery = async () => {
-      try {
-        const res = await API.get("/Carousel/GetCarousel");
-        setCarousel(res.data.msg || []);
-      } catch (err) {
-        setCarousel([]);
-      }
-    };
-    fetchGallery();
-  }, []);
+ useEffect(() => {
+  const fetchGallery = async () => {
+    try {
+      const res = await API.get("/Carousel/GetCarousel");
+
+      console.log("Carousel Response:", res.data);
+
+      setCarousel(res.data.msg || []);
+    } catch (err) {
+      console.log(err);
+      setCarousel([]);
+    }
+  };
+
+  fetchGallery();
+}, []);
 
   
   return (
@@ -109,10 +114,15 @@ function CarouselGal() {
         emulateTouch={true}
       >
         {carousel.map((item, index) => (
-          <Box key={index}>
+          // console.log(item.image),
+          <Box key={item}>
             <Box
               component="img"
-              src={`https://land-8m43.onrender.com/uploads/${item.image}`}
+             src={
+    item.image.startsWith("http")
+      ? item.image
+      : `https://land-8m43.onrender.com/uploads/${item.image}`
+  }
               alt="carousel"
               sx={{
                 width: "100%",

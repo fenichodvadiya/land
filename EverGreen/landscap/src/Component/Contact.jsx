@@ -104,7 +104,7 @@ Message:
 ${formData.message}`;
 
       window.open(
-        `https://wa.me/9909044747?text=${encodeURIComponent(message)}`,
+        `https://wa.me/919909044747?text=${encodeURIComponent(message)}`,
         "_blank"
       );
 

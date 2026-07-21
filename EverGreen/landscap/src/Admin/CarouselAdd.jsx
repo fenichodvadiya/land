@@ -26,6 +26,7 @@ function CarouselAdd() {
 
   const handledata = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
+    // console.log("Carousel Images:", res.data.msg.map(item => item.image));
   };
 
   // FETCH
@@ -41,6 +42,7 @@ function CarouselAdd() {
   } catch (err) {
     console.log(err);
     setGallery([]);
+    console.log(gallery,"cr")
   }
 };
 
@@ -168,20 +170,27 @@ function CarouselAdd() {
 
           <TableBody>
             {gallery.map((item) => (
-              <TableRow key={item._id}>
+                         <TableRow key={item._id}>
+           
+                           <TableCell sx={{ color: "#2E7D32" }}>
+                             {item.name}
+                           </TableCell>
+           
+                           <TableCell>
+                           
 
-                <TableCell>{item.name}</TableCell>
-
-                <TableCell>
-                  <img
-                    src={` https://land-8m43.onrender.com/uploads/${item.image}`}
-                    width="60"
-                    height="60"
-                    style={{ objectFit: "cover" }}
-                    alt=""
-                  />
-                </TableCell>
-
+  <img
+  src={
+    item.image.startsWith("http")
+      ? item.image
+      : `https://land-8m43.onrender.com/uploads/${item.image}`
+  }
+  width="60"
+  height="60"
+  style={{ objectFit: "cover" }}
+  alt={item.name}
+/>
+                           </TableCell>
                 <TableCell>
                   <EditIcon
                     sx={{ cursor: "pointer", color: "#2E7D32" }}
