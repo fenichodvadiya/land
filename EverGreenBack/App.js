@@ -26,8 +26,12 @@ app.get('/',(req,res)=>{
 })
 const fs = require("fs");
 
-app.get("/check-uploads", (req, res) => {
-  const uploadPath = path.join(__dirname, "uploads");
+const path = require("path");
+
+app.use(
+  "/uploads",
+  express.static(path.join(__dirname, "uploads"))
+);
 
   res.json({
     exists: fs.existsSync(uploadPath),

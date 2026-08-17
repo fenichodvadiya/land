@@ -63,7 +63,7 @@ function Contact() {
       value: "evergreenlandscapeservices99@gmail.com",
       action: () => {
         window.open(
-          "https://mail.google.com/mail/?view=cm&fs=1&to=chodvadiyafenny@gmail.com&su=Landscape Inquiry",
+          "https://mail.google.com/mail/?view=cm&fs=1&to=evergreenlandscapeservices99@gmail.com&su=Landscape Inquiry",
           "_blank"
         );
       }

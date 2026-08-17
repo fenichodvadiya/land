@@ -12,7 +12,7 @@ import {
     Button,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import CarouselGal from "./CarouselGal";
+import HeroSlider from "./HeroSlider";
 import { useNavigate } from "react-router-dom";
 import contact from "./Contact"
 import ParkIcon from "@mui/icons-material/Park";
@@ -53,7 +53,7 @@ function Home() {
         <Box sx={{ background: "#fafafa" }}>
 
             {/* HERO */}
-            <CarouselGal />
+            <HeroSlider />
 
             {/* TITLE */}
             <Container sx={{ py: 10 }}>

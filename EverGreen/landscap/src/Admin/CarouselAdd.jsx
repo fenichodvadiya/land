@@ -50,37 +50,67 @@ function CarouselAdd() {
     fetchGallery();
   }, []);
 
- const saveCarousel = async () => {
-  const formData = new FormData();
-
-  formData.append("name", data.name);
-
-  if (data.image) {
-    formData.append("image", data.image);
-  }
-
+const saveCarousel = async () => {
   try {
-    if (editId) {
-      await API.put(`/Carousel/UpdateCarousel/${editId}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-    } else {
-      await API.post("/Carousel/CreateCarousel", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+    console.log("🔥 1. SAVE CLICKED");
+    console.log("NAME:", data.name);
+    console.log("IMAGE:", data.image);
+
+    if (!data.name) {
+      console.log("❌ NAME REQUIRED");
+      return;
     }
 
-    fetchGallery();
+    if (!data.image) {
+      console.log("❌ IMAGE NOT SELECTED");
+      return;
+    }
+
+    const formData = new FormData();
+
+    formData.append("name", data.name);
+    formData.append("image", data.image);
+
+    console.log("🔥 2. FORM DATA CREATED");
+
+    for (let pair of formData.entries()) {
+      console.log("FORM DATA:", pair[0], pair[1]);
+    }
+
+    console.log("🔥 3. POST START");
+
+    let res;
+
+    if (editId) {
+      res = await API.put(
+        `/Carousel/UpdateCarousel/${editId}`,
+        formData
+      );
+    } else {
+      res = await API.post(
+        "/Carousel/CreateCarousel",
+        formData
+      );
+    }
+
+    console.log("🔥 4. POST SUCCESS:", res.data);
+
+    await fetchGallery();
+
+    setData({
+      name: "",
+      image: null,
+    });
+
+    setEditId(null);
     setOpen(false);
 
   } catch (err) {
-    console.log(err.response?.data || err);
+    console.log("❌ POST ERROR:", err);
+    console.log("❌ RESPONSE:", err.response?.data);
   }
 };
+  
 
   // EDIT OPEN
   const handleEdit = (item) => {
@@ -92,7 +122,7 @@ function CarouselAdd() {
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await API.delete(`https://land-8m43.onrender.com/Carousel/DeleteCarousel/${id}`);
+     await API.delete(`/Carousel/DeleteCarousel/${id}`);
       fetchGallery();
     } catch (err) {
       console.log(err);
@@ -179,17 +209,17 @@ function CarouselAdd() {
                            <TableCell>
                            
 
-  <img
-  src={
-    item.image.startsWith("http")
-      ? item.image
-      : `https://land-8m43.onrender.com/uploads/${item.image}`
-  }
-  width="60"
+ <img
+  src={`https://land-8m43.onrender.com/uploads/${item.image}`}
+  width="80"
   height="60"
-  style={{ objectFit: "cover" }}
+  style={{
+    objectFit: "cover",
+    borderRadius: "6px",
+  }}
   alt={item.name}
 />
+ 
                            </TableCell>
                 <TableCell>
                   <EditIcon

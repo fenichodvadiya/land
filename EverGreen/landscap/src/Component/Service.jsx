@@ -260,7 +260,7 @@ export default function LandscapeServices() {
             width: {
               xs: "100%",
               sm: "100%",
-              md: 555,
+              md: "100%",
             },
         }}
       >
