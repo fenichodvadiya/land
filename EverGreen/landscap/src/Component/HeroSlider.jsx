@@ -176,17 +176,9 @@ function HeroSlider() {
         >
           <Typography
             sx={{
-              fontSize: {
-                xs: "2rem",
-                sm: "2.8rem",
-                md: "4rem",
-                lg: "4.5rem",
-              },
-              fontWeight: 800,
-              lineHeight: {
-                xs: 1.15,
-                md: 1.1,
-              },
+               fontSize: { xs: "1.8rem", md: "3rem" },
+                            fontWeight: "bold",
+              
             }}
           >
             Evergreen
