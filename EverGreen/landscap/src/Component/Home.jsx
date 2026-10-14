@@ -12,7 +12,7 @@ import {
     Button,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import garden6 from "../pic/garden2.jpeg";
+import garden2 from "../pic/garden2.jpeg";
 import { useNavigate } from "react-router-dom";
 import contact from "./Contact"
 import ParkIcon from "@mui/icons-material/Park";
@@ -59,7 +59,7 @@ function Home() {
   sx={{
     mt:{md:12,sm:10,xs:8},
     height: { xs: "300px", sm: "380px", md: "400px" },
-    backgroundImage: `url(${garden6})`,
+    backgroundImage: `url(${garden2})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
