@@ -12,7 +12,7 @@ import {
     Button,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import garden6 from "../pic/garden6.jpeg";
+import garden6 from "../pic/garden2.jpeg";
 import { useNavigate } from "react-router-dom";
 import contact from "./Contact"
 import ParkIcon from "@mui/icons-material/Park";
