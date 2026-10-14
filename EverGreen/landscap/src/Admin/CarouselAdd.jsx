@@ -210,7 +210,7 @@ const saveCarousel = async () => {
                            
 
  <img
-  src={`https://land-8m43.onrender.com/uploads/${item.image}`}
+ src={`https://land-8m43.onrender.com/uploads/${image.image}`}
   width="80"
   height="60"
   style={{

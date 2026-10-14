@@ -30,6 +30,18 @@ const services = [
     icon: <ParkIcon sx={{ fontSize: 55 }} />,
   },
   {
+      title: "Landscape Lighting",
+  description:
+    "Elegant outdoor lighting to enhance beauty, safety and ambience.",
+  icon: <YardIcon sx={{ fontSize: 55 }} />,
+  },
+  {
+    title: "Garden Renovation",
+  description:
+    "Refresh existing gardens with creative designs and greenery.",
+  icon: <ParkIcon sx={{ fontSize: 55 }} />,
+  },
+  {
     title: "Lawn Maintenance",
     description:
       "Professional lawn care and maintenance services.",
@@ -205,126 +217,254 @@ export default function LandscapeServices() {
 <Box sx={{ py: 12 }}>
   <Container maxWidth="lg">
 
-    <Typography
+    
+  {/* MODERN PREMIUM LANDSCAPE SERVICES */}
+<Box
+  sx={{
+    position: "relative",
+    py: { xs: 7, md: 10 },
+    px: { xs: 2, sm: 3 },
+    overflow: "hidden",
+    background: "#F7FAF7",
+  }}
+>
+  {/* Decorative background shapes */}
+  <Box
+    sx={{
+      position: "absolute",
+      top: 50,
+      right: -100,
+      width: 250,
+      height: 250,
+      borderRadius: "50%",
+      bgcolor: "rgba(129,199,132,0.10)",
+      filter: "blur(3px)",
+      pointerEvents: "none",
+    }}
+  />
+
+  <Box
+    sx={{
+      position: "absolute",
+      bottom: 40,
+      left: -100,
+      width: 230,
+      height: 230,
+      borderRadius: "50%",
+      bgcolor: "rgba(46,125,50,0.07)",
+      pointerEvents: "none",
+    }}
+  />
+
+  <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+    {/* Heading */}
+    <MotionBox
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
       sx={{
         textAlign: "center",
-        color: "#43A047",
-        fontWeight: 700,
-        letterSpacing: 2,
-        mb: 1,
+        mb: { xs: 5, md: 6 },
       }}
     >
-      WHAT WE OFFER
-    </Typography>
-
-    <Typography
-      variant="h3"
-      fontWeight="bold"
-      textAlign="center"
-      mb={8}
-      color="#1B5E20"
-    >
-      Premium Landscape Services
-    </Typography>
-    <Grid container spacing={4}>
-  {services.map((service, index) => (
-    <Grid item xs={12} sm={6} md={3} key={index}>
-
-      <MotionCard
-        initial={{
-          opacity: 0,
-          y: 60,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.6,
-          delay: index * 0.15,
-        }}
-        whileHover={{
-          y: -15,
-          scale: 1.03,
-        }}
-        viewport={{ once: true }}
+      <Box
         sx={{
-          position: "relative",
-          overflow: "hidden",
-          height: "100%",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 1,
+          px: 2,
+          py: 0.8,
+          mb: 2,
           borderRadius: "30px",
-          background: "#fff",
-          border: "1px solid #e8f5e9",
-          boxShadow:
-            "0 15px 40px rgba(0,0,0,.08)",
-            width: {
-              xs: "100%",
-              sm: "100%",
-              md: "100%",
-            },
+          bgcolor: "#E5F3E6",
+          border: "1px solid #CBE5CE",
         }}
       >
-        <Box
-  sx={{
-    position: "absolute",
-    top: 0,
-    left: 0,
-    maxwidth: "500px",
-    height: 6,
-    background:
-      "linear-gradient(90deg,#2E7D32,#81C784)",
-  }}
-/>
-<CardContent sx={{ p: 4 }}>
-  <Box
-  sx={{
-    width: 90,
-    height: 90,
-    borderRadius: "25px",
-    background:
-      "linear-gradient(135deg,#E8F5E9,#C8E6C9)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "#2E7D32",
-    mb: 3,
-    
-  }}
->
-  {service.icon}
-</Box>
-<Typography
-  variant="h5"
-  fontWeight="bold"
-  mb={2}
->
-  {service.title}
-</Typography>
-<Typography
-  color="text.secondary"
-  sx={{
-    lineHeight: 1.8,
-    mb: 3,
-  }}
->
-  {service.description}
-</Typography>
-<Button
-  sx={{
-    color: "#2E7D32",
-    fontWeight: 700,
-    p: 0,
-    textTransform: "none",
-  }}
->
-  Learn More →
-</Button>
-</CardContent>
-</MotionCard>
+        <ParkIcon sx={{ color: "#2E7D32", fontSize: 18 }} />
+        <Typography
+          sx={{
+            color: "#2E7D32",
+            fontWeight: 700,
+            fontSize: "0.76rem",
+            letterSpacing: 2,
+          }}
+        >
+          WHAT WE OFFER
+        </Typography>
+      </Box>
 
+      <Typography
+        variant="h3"
+        sx={{
+          color: "#173F25",
+          fontWeight: 800,
+          fontSize: { xs: "2rem", sm: "2.6rem", md: "3.2rem" },
+          lineHeight: 1.2,
+          mb: 2,
+        }}
+      >
+        <Box component="span" sx={{ color: "#349139" }}>
+         Premium Landscape Services
+        </Box>
+      </Typography>
+
+      <Typography
+        sx={{
+          maxWidth: 650,
+          mx: "auto",
+          color: "#68776B",
+          fontSize: { xs: "0.92rem", md: "1rem" },
+          lineHeight: 1.9,
+        }}
+      >
+        From beautifully designed gardens to intelligent irrigation,
+        we create outdoor spaces that bring nature and modern living together.
+      </Typography>
+    </MotionBox>
+
+    {/* Service cards */}
+    <Grid container spacing={{ xs: 2.5, md: 3 }}>
+      {services.map((service, index) => (
+        <Grid item xs={12} sm={6} md={3} key={service.title}>
+          <MotionCard
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.55,
+              delay: index * 0.12,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              y: -8,
+              transition: { duration: 0.25 },
+            }}
+            viewport={{ once: true, amount: 0.2 }}
+            sx={{
+              height: "100%",
+              minHeight: { xs: 250, md: 280 },
+              maxWidth: { xs: 250, md: 320 },
+              position: "relative",
+              overflow: "hidden",
+              borderRadius: "22px",
+              bgcolor: "#FFFFFF",
+              border: "1px solid #E2EBE3",
+              boxShadow: "0 5px 22px rgba(24,65,34,0.055)",
+              transition: "box-shadow 0.3s ease, border-color 0.3s ease",
+              "&:hover": {
+                boxShadow: "0 16px 38px rgba(24,65,34,0.13)",
+                borderColor: "#A5D6A7",
+              },
+              "&:hover .service-icon": {
+                bgcolor: "#2E7D32",
+                color: "#FFFFFF",
+                transform: "scale(1.07) rotate(-4deg)",
+              },
+              "&:hover .service-arrow": {
+                transform: "translateX(5px)",
+                color: "#2E7D32",
+              },
+            }}
+          >
+            {/* Top accent */}
+            <Box
+              sx={{
+                height: 4,
+                background: "linear-gradient(90deg, #1B5E20, #81C784)",
+              }}
+            />
+
+            <CardContent
+              sx={{
+                p: { xs: 3, md: 3.2 },
+                "&:last-child": { pb: 3.2 },
+              }}
+            >
+              {/* Icon and number */}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  mb: 3,
+                }}
+              >
+                <MotionBox
+                  className="service-icon"
+                  whileHover={{ scale: 1.07 }}
+                  sx={{
+                    width: 66,
+                    height: 66,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "18px",
+                    bgcolor: "#EAF5EB",
+                    color: "#2E7D32",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  {React.cloneElement(service.icon, {
+                    sx: { fontSize: 35 },
+                  })}
+                </MotionBox>
+
+                <Typography
+                  sx={{
+                    fontSize: "1.8rem",
+                    fontWeight: 800,
+                    color: "#E5EEE6",
+                    lineHeight: 1,
+                  }}
+                >
+                  0{index + 1}
+                </Typography>
+              </Box>
+
+              {/* Title */}
+              <Typography
+                sx={{
+                  fontSize: { xs: "1.15rem", md: "1.2rem" },
+                  fontWeight: 750,
+                  color: "#1D3925",
+                  mb: 1.3,
+                  lineHeight: 1.4,
+                }}
+              >
+                {service.title}
+              </Typography>
+
+              {/* Description */}
+              <Typography
+                sx={{
+                  fontSize: "0.91rem",
+                  color: "#718075",
+                  lineHeight: 1.8,
+                  minHeight: { sm: 78 },
+                }}
+              >
+                {service.description}
+              </Typography>
+
+              {/* Bottom detail */}
+              <Box
+                sx={{
+                  mt: 2.5,
+                  pt: 2,
+                  borderTop: "1px solid #EDF2ED",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+              </Box>
+            </CardContent>
+          </MotionCard>
+        </Grid>
+      ))}
     </Grid>
-  ))}
-</Grid>
+  </Container>
+</Box>
 
   </Container>
 </Box>
@@ -557,6 +697,8 @@ export default function LandscapeServices() {
                   "&:hover": {
                     background: "#1b5e20",
                   },
+                  align:"center",
+                  mb:4
                 }}
                 onClick={() => {
                   navigate("/Contact");

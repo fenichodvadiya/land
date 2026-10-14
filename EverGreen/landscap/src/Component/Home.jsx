@@ -12,13 +12,14 @@ import {
     Button,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import HeroSlider from "./HeroSlider";
+import garden6 from "../pic/garden6.jpeg";
 import { useNavigate } from "react-router-dom";
 import contact from "./Contact"
 import ParkIcon from "@mui/icons-material/Park";
 import GrassIcon from "@mui/icons-material/Grass";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import ForestIcon from "@mui/icons-material/Forest";
+import NavBar from "./NavBar";
 const MotionBox = motion.create(Box);
 function Home() {
     const [advertisement, setAdvertisement] = useState([]);
@@ -51,9 +52,58 @@ function Home() {
 
     return (
         <Box sx={{ background: "#fafafa" }}>
+<NavBar/>
+        
+{/* HERO SECTION */}
+<Box
+  sx={{
+    mt:{md:12,sm:10,xs:8},
+    height: { xs: "300px", sm: "380px", md: "400px" },
+    backgroundImage: `url(${garden6})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  <Box
+    sx={{
+      position: "absolute",
+      inset: 0,
+      background: "rgba(0,0,0,0.4)",
+    }}
+  />
 
-            {/* HERO */}
-            <HeroSlider />
+  <Container sx={{ position: "relative", zIndex: 2 }}>
+    <MotionBox
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <Typography
+        variant="h3"
+        textAlign="center"
+        fontWeight="bold"
+        color="white"
+        sx={{ fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" } }}
+      >
+        EVERGREEN LANDSCAPE SERVICES
+      </Typography>
+
+      <Typography
+        textAlign="center"
+        color="white"
+        sx={{ mt: 2, maxWidth: 800, mx: "auto", lineHeight: 1.8 }}
+      >
+        We create beautiful, modern and sustainable outdoor environments
+        with professional landscaping solutions.
+      </Typography>
+    </MotionBox>
+  </Container>
+</Box>
+
 
             {/* TITLE */}
             <Container sx={{ py: 10 }}>

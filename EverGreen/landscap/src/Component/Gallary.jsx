@@ -44,9 +44,9 @@ function Gallary() {
                     background:
                         "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6')",
                     backgroundSize: "cover",
-                    marginTop: { xs: 0, md: 0, lg: 13 },
                     backgroundPosition: "center",
-                    height: { xs: "40vh", md: "55vh" },
+                    mt:{md:12,sm:10,xs:8},
+    height: { xs: "300px", sm: "380px", md: "400px" },
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

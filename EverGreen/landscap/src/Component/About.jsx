@@ -57,7 +57,8 @@ function About() {
       <NavBar />
       <Box
         sx={{
-          height: "80vh",
+         mt:{md:12,sm:10,xs:8},
+    height: { xs: "300px", sm: "380px", md: "400px" },
           backgroundImage: `url(${garden1})`,
           backgroundSize: "cover",
           backgroundPosition: "center",

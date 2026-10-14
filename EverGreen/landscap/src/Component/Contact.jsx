@@ -126,7 +126,8 @@ ${formData.message}`;
         <Navbar />
         <Box
           sx={{
-            minHeight: "60vh",
+            mt:{md:12,sm:10,xs:8},
+    height: { xs: "300px", sm: "380px", md: "400px" },
             background:
               `linear-gradient(rgba(6, 15, 7, 0.75), rgba(29, 67, 32, 0.75)), url(${garden6})`,
             backgroundSize: "cover",
